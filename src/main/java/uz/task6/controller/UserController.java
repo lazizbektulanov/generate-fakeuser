@@ -22,11 +22,4 @@ public class UserController {
         return new ParamDto();
     }
 
-    @PostMapping("/generate")
-    private String generate(ParamDto paramDto, Model model){
-        System.out.println(paramDto);
-        List<UserDto> generatedFakeUsers = userService.generate(paramDto);
-        model.addAttribute("fakeUsers",generatedFakeUsers);
-        return "index";
-    }
 }
